@@ -12,7 +12,7 @@ if command -v gemini &> /dev/null
 then
     # If gemini is found, read the content of the specified file and pipe it to gemini
     if [ -f "$FILE_PATH" ]; then
-        cat "$FILE_PATH" | gemini
+        echo -e "$(cat "$FILE_PATH")\n${@:2}" | gemini
     else
         echo "Error: Invalid argument. No gemini.md file found for '$1' at $FILE_PATH"
         echo "Possible arguments are:"
