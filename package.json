@@ -1,0 +1,25 @@
+{
+  "name": "ai-prompts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:md": "markdownlint '**/*.md' --ignore 'node_modules'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zordius/ai-prompts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/zordius/ai-prompts/issues"
+  },
+  "homepage": "https://github.com/zordius/ai-prompts#readme",
+  "devDependencies": {
+    "markdownlint-cli": "^0.45.0"
+  }
+}
