@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules' --fix"
+    "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules' --fix",
+    "self:dev": "npx github:zordius/ai-prompts"
   },
   "repository": {
     "type": "git",
