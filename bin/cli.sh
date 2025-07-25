@@ -6,7 +6,7 @@ SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 PROJECT_ROOT=$(dirname "$SCRIPT_DIR")
 
 list_possible_arguments() {
-    echo "Possible prompt are:"
+    echo "Possible prompts are:"
     local first_arg=""
     find "$PROJECT_ROOT" -type f -name "gemini.md" | sed "s|${PROJECT_ROOT}/||" | sed "s|/gemini.md||" | while read -r dir; do
         echo "  - $dir"
