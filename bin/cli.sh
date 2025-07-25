@@ -5,6 +5,22 @@ SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 # Navigate up to the project root directory
 PROJECT_ROOT=$(dirname "$SCRIPT_DIR")
 
+list_possible_arguments() {
+    echo "Possible prompt are:"
+    local first_arg=""
+    find "$PROJECT_ROOT" -type f -name "gemini.md" | sed "s|${PROJECT_ROOT}/||" | sed "s|/gemini.md||" | while read -r dir; do
+        echo "  - $dir"
+        if [ -z "$first_arg" ]; then
+            first_arg="$dir"
+        fi
+    done
+    if [ -n "$first_arg" ]; then
+        local command_name=$(basename "$0")
+        echo ""
+        echo "Example: $command_name ocr"
+    fi
+}
+
 # Construct the absolute path to the gemini.md file based on the first argument
 FILE_PATH="${PROJECT_ROOT}/${1}/gemini.md"
 
@@ -13,12 +29,13 @@ then
     # If gemini is found, read the content of the specified file and pipe it to gemini
     if [ -f "$FILE_PATH" ]; then
         echo -e "$(cat "$FILE_PATH")\n${@:2}" | gemini
+    elif [ -z "$1" ]; then
+        echo "Error: No argument provided. Please specify a prompt."
+        list_possible_arguments
+        exit 1
     else
-        echo "Error: Invalid argument. No gemini.md file found for '$1' at $FILE_PATH"
-        echo "Possible arguments are:"
-        find "$PROJECT_ROOT" -type f -name "gemini.md" | sed "s|${PROJECT_ROOT}/||" | sed "s|/gemini.md||" | while read -r dir; do
-            echo "  - $dir"
-        done
+        echo "Error: Invalid argument. No prompt found for '$1'"
+        list_possible_arguments
         exit 1
     fi
 else
