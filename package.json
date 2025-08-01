@@ -1,5 +1,5 @@
 {
-  "name": "ai-prompts",
+  "name": "z-ai-prompts",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -9,20 +9,20 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:md": "markdownlint-cli2 '**/*.md' '#node_modules' --fix",
-    "self:dev": "npx github:zordius/ai-prompts"
+    "self:dev": "npx github:zordius/z-ai-prompts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zordius/ai-prompts.git"
+    "url": "git+https://github.com/zordius/z-ai-prompts.git"
   },
   "keywords": [],
   "author": "Zordius <zordius@gmail.com>",
   "license": "MIT",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/zordius/ai-prompts/issues"
+    "url": "https://github.com/zordius/z-ai-prompts/issues"
   },
-  "homepage": "https://github.com/zordius/ai-prompts#readme",
+  "homepage": "https://github.com/zordius/z-ai-prompts#readme",
   "devDependencies": {
     "markdownlint-cli2": "^0.18.1"
   }
