@@ -16,7 +16,7 @@
     "url": "git+https://github.com/zordius/ai-prompts.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Zordius <zordius@gmail.com>",
   "license": "MIT",
   "type": "commonjs",
   "bugs": {
